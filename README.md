@@ -43,4 +43,4 @@ The primary configuration recognizes the exact validated shader hash. Experiment
 
 The original diagnostic/corrective development project is preserved outside this maintained source tree. No new gameplay verification on 221 is claimed.
 
-See [licensing and attribution](docs/LICENSING.md), [contribution guidance](CONTRIBUTING.md), [issue reporting](SUPPORT.md) and [future work](docs/FUTURE.md). The project's original code is MIT-licensed. The SDK is fetched into ignored storage rather than redistributed in the repository. Retain all incorporated third-party notices.
+See [licensing and attribution](docs/LICENSING.md), [contribution guidance](CONTRIBUTING.md), [issue reporting](SUPPORT.md) and [future work](docs/FUTURE.md). The project's original code is MIT-licensed.
