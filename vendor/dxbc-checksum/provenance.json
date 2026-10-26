@@ -1,0 +1,15 @@
+{
+  "commit": "545195d74ff0758f74ebf9a8b4c541f9390a1df7",
+  "files": [
+    {
+      "path": "DXBCChecksum.cpp",
+      "sha256": "b643a548a60966b28bce280a3a9acf5961d2ae63dd28a68a72288dbe18085462",
+      "url": "https://raw.githubusercontent.com/GPUOpen-Archive/common-src-ShaderUtils/545195d74ff0758f74ebf9a8b4c541f9390a1df7/DX10/DXBCChecksum.cpp"
+    },
+    {
+      "path": "DXBCChecksum.h",
+      "sha256": "96b3d5d27e09a2c8d5eea860e9eac595c29a2b68f0f2233bf53afcb9a165fad1",
+      "url": "https://raw.githubusercontent.com/GPUOpen-Archive/common-src-ShaderUtils/545195d74ff0758f74ebf9a8b4c541f9390a1df7/DX10/DXBCChecksum.h"
+    }
+  ]
+}

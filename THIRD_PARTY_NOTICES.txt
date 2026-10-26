@@ -1,0 +1,5 @@
+High-Poly Dismemberment Fix uses selected official F4SE SDK components at revision 6f6a7caa9aeaebc957a70d934b6ab6b80eb768b2. F4SE itself must be installed separately; no F4SE runtime binary is redistributed. See the accompanying F4SE notices.
+
+DXBC checksum code is from AMD/GPUOpen common-src-ShaderUtils revision 545195d74ff0758f74ebf9a8b4c541f9390a1df7 and is derived from the RSA Data Security, Inc. MD5 Message Digest Algorithm. Full original notices are included.
+
+LLVM-MinGW statically linked runtime components retain their original notices. Windows system/UCRT libraries are OS dependencies. No Bethesda executable, original shader program, archive, mesh or SSF is redistributed. No source code from Community Shaders, GFXBooster or its ShaderDB was incorporated.

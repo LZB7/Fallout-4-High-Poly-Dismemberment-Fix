@@ -1,0 +1,79 @@
+High-Poly Dismemberment Fix 1.0.0
+Primary release: Fallout 4 1.11.240 / F4SE 0.7.9 / Windows x64
+
+Fixes missing torso pieces and incorrect cuts caused by an engine limitation
+when dismembering otherwise valid high-poly bodies or outfits. The correction
+preserves the engine's normal processing for operations that do not need it.
+The underlying 1.11.240 correction completed extensive user gameplay testing.
+The release cleanup was checked with automated CPU, hook and GPU replay tests.
+
+Install
+-------
+Install this archive with a mod manager, or merge its Data folder into the game
+folder. Launch through the matching F4SE loader. Remove the old development
+DismembermentDiagnostic.dll if you previously installed it. Install ONLY ONE
+variant of High-Poly Dismemberment Fix; both variants use the same DLL filename.
+Uninstall by removing the mod. No ESP, Address Library, custom SSF, body mesh,
+external shader file, or save conversion is required by this plugin.
+
+Configuration
+-------------
+Data/F4SE/Plugins/HighPolyDismembermentFix.ini:
+ [General]
+ Enabled=1
+ Verbose=0
+Enabled=0 disables the correction. Verbose=1 enables extra troubleshooting
+messages; leave it off for ordinary play. Restart the game after changes.
+
+Compatibility and limits
+------------------------
+Meshes must already have valid dismemberment segments, cut-offset metadata and
+appropriate SSF definitions. This plugin does not add missing asset metadata
+or make every body/outfit dismemberable. Splitting meshes, reordering triangles
+or reducing polygon counts is not part of this plugin's installation workflow.
+Armor and the nude body are separate assets and each needs appropriate data.
+User testing included Fusion Girl/ZeX and 3BBB/OCBP configurations; this is not
+a guarantee for every asset or mod combination. No body-specific assets ship.
+
+The correction expands supported range starts to 18 bits (262,143 index
+entries). It does not widen triangle counts or generated vertex indices.
+The existing 16-bit generated-output limits and 12-record interface remain.
+Unknown executable code, changed dismemberment shaders, incompatible buffers,
+deferred contexts or conflicting hooks cause native fallback/disablement.
+Such fallback does not mean the affected high-poly cut was fixed.
+Other runtimes, including OG 1.10.163, are not supported by this primary build.
+
+Troubleshooting
+---------------
+Data/F4SE/Plugins/HighPolyDismembermentFix.log is reset each launch. It records
+startup/profile/hook status and the first significant fallback. Successful
+shader validation is logged when an eligible high-start operation reaches it.
+No such message before an eligible cut is not itself a failure. If no log is
+created, also check the F4SE log and installation path. For a bug report include
+game/F4SE/plugin versions, which package you installed, the log, body/outfit,
+SSF/skeleton/physics setup, reproduction steps and screenshots when useful.
+Do not attach copyrighted game archives or body assets to public bug reports.
+
+Technical note
+--------------
+The engine drops upper bits when preparing mesh ranges for its dismemberment
+compute shader. The plugin restores those bits through a small sideband and
+transforms the recognized shader in memory. It does not modify game files or
+redistribute Bethesda shader bytecode. It adds no GPU waits or readback dumps.
+
+Credits
+-------
+Research, implementation and extensive gameplay testing by the project team
+and user. F4SE: Ian Patterson, Stephen Abel and Brendan Borthwick.
+DXBC checksum: AMD Developer Tools / GPUOpen; derived from the RSA Data
+Security, Inc. MD5 Message Digest Algorithm. LLVM-MinGW supplied the compiler
+and statically linked runtime components. See ThirdPartyNotices and
+THIRD_PARTY_NOTICES.txt. The shader projects discussed in the developer notes
+were reference material; no code from them is included.
+
+Release notes
+-------------
+1.0.0: Production cleanup of the validated 0.2.2 correction. Three required
+hooks remain. Observation-only readback/post hooks, actor tracking, event
+queues and large JSONL diagnostics were removed. Minimal logging/configuration
+replace research modes. This archive is the supported 1.11.240 release.
