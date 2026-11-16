@@ -89,8 +89,8 @@ inline bool transform(const std::vector<unsigned char>& native,std::vector<unsig
  result=native;const auto at=code+478*4;
  result.insert(result.begin()+at,reinterpret_cast<const unsigned char*>(patch.data()),
                reinterpret_cast<const unsigned char*>(patch.data()+patch.size()));
- put(result,code+41*4,74);put(result,code+4,count+patch.size());
- put(result,80,89548+patch.size()*4);put(result,24,static_cast<std::uint32_t>(result.size()));
+ put(result,code+41*4,74);put(result,code+4,count+static_cast<std::uint32_t>(patch.size()));
+ put(result,80,89548+static_cast<std::uint32_t>(patch.size()*4));put(result,24,static_cast<std::uint32_t>(result.size()));
  DWORD hash[4]{};CalculateDXBCChecksum(result.data(),static_cast<DWORD>(result.size()),hash);
  memcpy(result.data()+4,hash,16);return true;
 }
